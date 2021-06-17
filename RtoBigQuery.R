@@ -28,6 +28,7 @@ options(googleAuthR.client_id = "___________________.apps.googleusercontent.com"
 Sys.setenv(BIGQUERY_TEST_PROJECT = "_________________") # Replace with your GCP project ID
 
 # Upload data.frame that doesn't include "." in header names
+# To append data to an existing non-empty table, use writeDisposition ="WRITE_APPEND"
 names(iris) = c("a","b","c","d","e")
 df=data.frame(iris)
 bigQueryR::bqr_upload_data(projectId  = "______________", datasetId = "______________", tableId = "______________", df, 
